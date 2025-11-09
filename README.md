@@ -23,4 +23,24 @@ Este projeto é uma aplicação Django para gerenciar e exibir cursos em formato
 
 ---
 
+### Histórico
+
+O app `courses` foi criado com o comando:
+
+```bash
+uv run python manage.py startapp courses
+```
+
+O app `dashboard` foi criado com o comando:
+
+```bash
+uv run python manage.py startapp dashboard
+```
+
+O app `profiles` foi criado com o comando:
+
+```bash
+uv run python manage.py startapp profiles
+```
+
 Consulte a documentação do Django para mais comandos e opções.
