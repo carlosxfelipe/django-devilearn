@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def dashboard_home(request):
-    return render(request, "base.html")
+    return render(request, "dashboard/index.html")
