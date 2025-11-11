@@ -17,8 +17,16 @@ Este projeto é uma aplicação Django para gerenciar e exibir cursos em formato
 
 2. **Executar o servidor de desenvolvimento:**
 
+   Você pode escolher uma das opções abaixo:
+
    ```bash
    uv run python manage.py runserver
+   ```
+
+   ou simplesmente:
+
+   ```bash
+   uv run dev.py
    ```
 
 ---
