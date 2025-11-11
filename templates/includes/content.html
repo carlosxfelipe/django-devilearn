@@ -1,0 +1,24 @@
+<main>
+  {% block content %}
+  <h1>¡Hola, {{ user.get_full_name|default:user.username|default:"Visitante" }}!</h1>
+  <section class="content">
+    <div class="cards">
+      <a href="{% url 'courses' %}">
+        <div class="card">
+          <h3>Continuar viendo</h3>
+        </div>
+      </a>
+      <a href="{% url 'courses' %}">
+        <div class="card">
+          <h3>Cursos</h3>
+        </div>
+      </a>
+      <a href="{% url 'profile' %}">
+        <div class="card">
+          <h3>Perfil</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+  {% endblock %}
+</main>
