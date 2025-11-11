@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curso Django</title>
+  <title>{% if title %}{{ title }}{% else %}Curso Django{% endif %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.jade.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -12,47 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/lessons.css' %}" />
   </head>
   <body class="page-lessons">
-    <div class="header">
-      <div class="header-left">
-        <details class="dropdown nav-dropdown">
-          <summary role="button" class="secondary outline" aria-label="Abrir menu">
-            <i class="fa-solid fa-bars"></i>
-          </summary>
-          <ul>
-            <li>
-              <a href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Dashboard</a>
-            </li>
-            <li>
-              <a href="{% url 'courses' %}"><i class="fa-solid fa-chalkboard-user"></i> Cursos</a>
-            </li>
-            <li>
-              <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> Perfil</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-headset"></i> Soporte</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-gear"></i> Configuración</a>
-            </li>
-          </ul>
-        </details>
-        <a href="{% url 'dashboard' %}">
-          <img src="{% static 'images/devilearn_dark.png' %}" alt="Logo Devilearn" class="brand" id="logo-devilearn" data-dark="{% static 'images/devilearn_dark.png' %}" data-light="{% static 'images/devilearn_light.png' %}" />
-        </a>
-      </div>
-      <div class="header-right">
-        <div class="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="search" placeholder="Buscar..." />
-        </div>
-        <button id="theme-toggle" title="Alternar tema">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </button>
-        <div class="avatar">
-          <img src="https://avatars.githubusercontent.com/u/85801709?s=400&u=01cce0318ea853ce1a133699bc6b2af1919094d6&v=4" alt="User" />
-        </div>
-      </div>
-    </div>
+    {% include "includes/navbar.html" %}
     <div class="layout">
       <aside class="sidebar">
         <h1 class="course-title">Django: Crea aplicaciones web robustas con Python</h1>
