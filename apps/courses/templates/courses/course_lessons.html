@@ -1,70 +1,100 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curso Django</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.jade.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/lessons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.jade.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/lessons.css' %}" />
   </head>
-
   <body class="page-lessons">
     <div class="header">
       <div class="header-left">
-        {% extends "base.html" %}
-        {% block title %}Aulas do Curso | Devilearn{% endblock %}
-        {% block content %}
-        <div class="layout">
-          <aside class="sidebar">
-            <h1 class="course-title">Django: Crea aplicaciones web robustas con Python</h1>
-            <p class="progress">0% completado</p>
-            <input class="lesson-search" placeholder="Buscar por título de lección..." />
-            <div class="accordion">
-              <div class="accordion-item">
-                <button class="accordion-header">Sección 1: Introducción al curso <span>0 / 6</span></button>
-                <div class="accordion-content">
-                  <ul>
-                    <li>Bienvenida</li>
-                    <li>¿Qué aprenderás?</li>
-                    <li>Requisitos del curso</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-header">Sección 2: Fundamentos necesarios de Python <span>0 / 27</span></button>
-                <div class="accordion-content">
-                  <ul>
-                    <li>Variables</li>
-                    <li>Condicionales</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </aside>
-          <main class="main-content">
-            <div class="content-header">Introducción al curso</div>
-            <div class="video-wrapper">
-              <video controls poster="https://placehold.co/800x450?text=Este+curso+est%C3%A1+en+proceso+de+construcci%C3%B3n">
-                <source src="video-demo.mp4" type="video/mp4" />
-                Tu navegador no soporta videos.
-              </video>
-            </div>
-            <div class="bottom-bar">
-              <button class="btn-complete">COMPLETAR Y CONTINUAR →</button>
-            </div>
-          </main>
-        </div>
-        {% endblock %}
+        <details class="dropdown nav-dropdown">
+          <summary role="button" class="secondary outline" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+          </summary>
+          <ul>
+            <li>
+              <a href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="{% url 'courses' %}"><i class="fa-solid fa-chalkboard-user"></i> Cursos</a>
+            </li>
+            <li>
+              <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> Perfil</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-headset"></i> Soporte</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-gear"></i> Configuración</a>
+            </li>
+          </ul>
+        </details>
+        <a href="{% url 'dashboard' %}">
+          <img src="{% static 'images/devilearn_dark.png' %}" alt="Logo Devilearn" class="brand" id="logo-devilearn" data-dark="{% static 'images/devilearn_dark.png' %}" data-light="{% static 'images/devilearn_light.png' %}" />
+        </a>
+      </div>
+      <div class="header-right">
         <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Buscar..." />
+        </div>
+        <button id="theme-toggle" title="Alternar tema">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <div class="avatar">
+          <img src="https://avatars.githubusercontent.com/u/85801709?s=400&u=01cce0318ea853ce1a133699bc6b2af1919094d6&v=4" alt="User" />
+        </div>
+      </div>
+    </div>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1 class="course-title">Django: Crea aplicaciones web robustas con Python</h1>
+        <p class="progress">0% completado</p>
+        <input class="lesson-search" placeholder="Buscar por título de lección..." />
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">Sección 1: Introducción al curso <span>0 / 6</span></button>
+            <div class="accordion-content">
+              <ul>
+                <li>Bienvenida</li>
+                <li>¿Qué aprenderás?</li>
+                <li>Requisitos del curso</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Sección 2: Fundamentos necesarios de Python <span>0 / 27</span></button>
+            <div class="accordion-content">
+              <ul>
+                <li>Variables</li>
+                <li>Condicionales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="content-header">Introducción al curso</div>
+        <div class="video-wrapper">
+          <video controls poster="https://placehold.co/800x450?text=Este+curso+est%C3%A1+en+proceso+de+construcci%C3%B3n">
+            <source src="{% static 'video-demo.mp4' %}" type="video/mp4" />
+            Tu navegador no soporta videos.
+          </video>
+        </div>
+        <div class="bottom-bar">
+          <button class="btn-complete">COMPLETAR Y CONTINUAR →</button>
+        </div>
+      </main>
+    </div>
+    <script src="{% static 'js/theme-switcher.js' %}"></script>
+    <script src="{% static 'js/logo-theme.js' %}"></script>
+    <script src="{% static 'js/multimedia.js' %}"></script>
+  </body>
+</html>
