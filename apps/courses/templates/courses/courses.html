@@ -8,7 +8,7 @@
     {% for course in courses %}
       <div class="course-card">
         <a href="{% url 'course_detail' pk=course.id %}">
-          <img src="{% static 'images/curso_' %}{{ course.id }}.jpg" alt="Course Image" class="course-img" />
+          <img src="{% static course.image %}" alt="Course Image" class="course-img" />
           <div class="course-info">
             <div class="course-rating">
               <span class="tag beginner">{{ course.level }}</span>
@@ -18,15 +18,7 @@
             </div>
             <h3 class="course-title">{{ course.course_title }}</h3>
             <div class="author">
-              {% if course.id == 1 %}
-                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" />
-              {% elif course.id == 2 %}
-                <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="" />
-              {% elif course.id == 3 %}
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" />
-              {% elif course.id == 4 %}
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" />
-              {% endif %}
+              <img src="{{ course.avatar }}" alt="" />
               <span>{{ course.instructor }}</span>
             </div>
           </div>
