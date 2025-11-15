@@ -298,7 +298,7 @@ for detail in course_details:
     lessons_details.append(
         {
             "course_title": detail["course_title"],
-            "course_progress": 0,  # Pode ser atualizado conforme necessário
+            "course_progress": 0,
             "course_content": detail["course_content"],
         }
     )
