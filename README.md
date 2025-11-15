@@ -23,11 +23,14 @@ Este projeto é uma aplicação Django para gerenciar e exibir cursos em formato
    uv run python manage.py runserver
    ```
 
+
    ou simplesmente:
 
    ```bash
    uv run dev.py
    ```
+
+   > Rodando com `uv run dev.py` o servidor executa **sem cache** de arquivos estáticos e templates (útil para desenvolvimento).
 
 ---
 

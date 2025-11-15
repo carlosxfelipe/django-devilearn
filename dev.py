@@ -3,6 +3,9 @@ import sys
 
 
 def main():
+    import os
+
+    os.environ["DJANGO_NOCACHE"] = "1"
     try:
         subprocess.run(["uv", "run", "python", "manage.py", "runserver"], check=True)
     except KeyboardInterrupt:
