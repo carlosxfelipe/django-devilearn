@@ -67,6 +67,8 @@ course_details = [
             {
                 "id": 1,
                 "name": "Introducción a Python",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {
                         "name": "¿Qué aprenderás en este curso de Python?",
@@ -81,11 +83,10 @@ course_details = [
             {
                 "id": 2,
                 "name": "Fundamentos del lenguaje",
+                "total_lessons": 3,
+                "complete_lessons": 0,
                 "lessons": [
-                    {
-                        "name": "Variables, tipos de datos y operadores",
-                        "type": "video",
-                    },
+                    {"name": "Variables, tipos de datos y operadores", "type": "video"},
                     {"name": "Estructuras condicionales", "type": "video"},
                     {"name": "Bucles y control de flujo", "type": "article"},
                 ],
@@ -93,6 +94,8 @@ course_details = [
             {
                 "id": 3,
                 "name": "Colecciones y manejo de datos",
+                "total_lessons": 3,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Listas y tuplas", "type": "video"},
                     {"name": "Diccionarios y conjuntos", "type": "video"},
@@ -102,6 +105,8 @@ course_details = [
             {
                 "id": 4,
                 "name": "Funciones y módulos",
+                "total_lessons": 3,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Creación y uso de funciones", "type": "video"},
                     {"name": "Argumentos, retorno y ámbito", "type": "article"},
@@ -111,6 +116,8 @@ course_details = [
             {
                 "id": 5,
                 "name": "Python práctico",
+                "total_lessons": 3,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Trabajo con archivos", "type": "video"},
                     {"name": "Errores y excepciones", "type": "article"},
@@ -132,6 +139,8 @@ course_details = [
             {
                 "id": 1,
                 "name": "Introducción a Django",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "¿Qué es Django y para qué se usa?", "type": "video"},
                     {"name": "Arquitectura MVT", "type": "article"},
@@ -140,6 +149,8 @@ course_details = [
             {
                 "id": 2,
                 "name": "Modelos y base de datos",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Creación de modelos en Django", "type": "video"},
                     {"name": "Migraciones y ORM", "type": "article"},
@@ -148,6 +159,8 @@ course_details = [
             {
                 "id": 3,
                 "name": "Vistas y rutas",
+                "total_lessons": 3,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Vistas basadas en funciones", "type": "video"},
                     {"name": "Vistas basadas en clases", "type": "video"},
@@ -157,17 +170,18 @@ course_details = [
             {
                 "id": 4,
                 "name": "Templates y front-end",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Sistema de plantillas de Django", "type": "video"},
-                    {
-                        "name": "Uso de bloques, herencia y contexto",
-                        "type": "article",
-                    },
+                    {"name": "Uso de bloques, herencia y contexto", "type": "article"},
                 ],
             },
             {
                 "id": 5,
                 "name": "Autenticación y seguridad",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Sistema de usuarios", "type": "video"},
                     {"name": "Protección de rutas y roles", "type": "article"},
@@ -188,6 +202,8 @@ course_details = [
             {
                 "id": 1,
                 "name": "Optimización avanzada",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Consultas complejas con ORM", "type": "video"},
                     {"name": "Indexación y performance", "type": "article"},
@@ -196,6 +212,8 @@ course_details = [
             {
                 "id": 2,
                 "name": "Arquitectura y escalabilidad",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {
                         "name": "Patrón de servicios y apps desacopladas",
@@ -207,17 +225,18 @@ course_details = [
             {
                 "id": 3,
                 "name": "Seguridad en Django",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
-                    {
-                        "name": "Protección CSRF, XSS y SQL Injection",
-                        "type": "video",
-                    },
+                    {"name": "Protección CSRF, XSS y SQL Injection", "type": "video"},
                     {"name": "Gestión de permisos y sesiones", "type": "article"},
                 ],
             },
             {
                 "id": 4,
                 "name": "Testing y calidad",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Pruebas unitarias y de integración", "type": "video"},
                     {"name": "Buenas prácticas de cobertura", "type": "article"},
@@ -226,6 +245,8 @@ course_details = [
             {
                 "id": 5,
                 "name": "Despliegue",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Despliegue con Docker", "type": "video"},
                     {"name": "Configuración en producción", "type": "article"},
@@ -246,17 +267,18 @@ course_details = [
             {
                 "id": 1,
                 "name": "Introducción a FastAPI",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Core de FastAPI y ASGI", "type": "video"},
-                    {
-                        "name": "Estructura profesional de proyecto",
-                        "type": "article",
-                    },
+                    {"name": "Estructura profesional de proyecto", "type": "article"},
                 ],
             },
             {
                 "id": 2,
                 "name": "APIs avanzadas",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Validación avanzada con Pydantic", "type": "video"},
                     {"name": "Rutas, dependencias y seguridad", "type": "article"},
@@ -265,6 +287,8 @@ course_details = [
             {
                 "id": 3,
                 "name": "Alto rendimiento",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Concurrency con async/await", "type": "video"},
                     {"name": "Optimización y caché", "type": "article"},
@@ -273,6 +297,8 @@ course_details = [
             {
                 "id": 4,
                 "name": "Integraciones",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "FastAPI + SQLAlchemy", "type": "video"},
                     {"name": "Autenticación JWT y OAuth2", "type": "video"},
@@ -281,6 +307,8 @@ course_details = [
             {
                 "id": 5,
                 "name": "Testing y despliegue",
+                "total_lessons": 2,
+                "complete_lessons": 0,
                 "lessons": [
                     {"name": "Testing automático de endpoints", "type": "video"},
                     {
