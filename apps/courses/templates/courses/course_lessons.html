@@ -29,7 +29,14 @@
             <div class="accordion-content">
               <ul>
                 {% for l in section.lessons %}
-                  <li>{{ l.name }}</li>
+                  <li>
+                    {% if l.type == 'video' %}
+                      <i class="fa-solid fa-video" style="color:#4f8cff;margin-right:0.5em;"></i>
+                    {% elif l.type == 'article' %}
+                      <i class="fa-solid fa-file" style="color:#ff4f4f;margin-right:0.5em;"></i>
+                    {% endif %}
+                    {{ l.name }}
+                  </li>
                 {% endfor %}
               </ul>
             </div>
