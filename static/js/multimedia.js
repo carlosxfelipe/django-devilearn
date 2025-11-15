@@ -1,3 +1,4 @@
+console.log("multimedia.js carregado");
 document.querySelectorAll(".accordion-header").forEach((header) => {
   header.addEventListener("click", () => {
     const item = header.parentElement;
