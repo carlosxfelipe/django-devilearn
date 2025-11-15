@@ -15,13 +15,17 @@
     {% include "includes/navbar.html" %}
     <div class="layout">
       <aside class="sidebar">
-  <h1 class="course-title">{{ lesson.course_title }}</h1>
-  <p class="progress">{{ lesson.course_progress }}% completado</p>
+        <h1 class="course-title">{{ lesson.course_title }}</h1>
+        <p class="progress">{{ lesson.course_progress }}% completado</p>
         <input class="lesson-search" placeholder="Buscar por título de lección..." />
         <div class="accordion">
           {% for section in lesson.course_content %}
           <div class="accordion-item">
-            <button class="accordion-header">Sección {{ section.id }}: {{ section.name }} <span>{{ section.complete_lessons|default:0 }} / {{ section.total_lessons|default:0 }}</span></button>
+            <button class="accordion-header">Sección {{ section.id }}: {{ section.name }} 
+              <span>
+                {{ section.complete_lessons|default:0 }} / {{ section.total_lessons|default:0 }}
+              </span>
+            </button>
             <div class="accordion-content">
               <ul>
                 {% for l in section.lessons %}
