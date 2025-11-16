@@ -28,57 +28,6 @@
   border-radius: 6px;
 }
 
-/* ===== Accordion (lições) ===== */
-.page-lessons .accordion-item {
-  border-bottom: 1px solid var(--pico-muted-border-color);
-}
-.page-lessons .accordion-header {
-  background: none;
-  border: 0;
-  color: var(--pico-color);
-  font-size: 1rem;
-  padding: 1rem 0;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.page-lessons .accordion-header::after {
-  content: "\f107";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 0.9rem;
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
-}
-.page-lessons .accordion-header:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-.page-lessons .accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding-left: 1rem;
-}
-.page-lessons .accordion-content ul {
-  list-style: disc;
-  margin: 0.5rem 0 1rem;
-  padding-left: 1rem;
-  color: var(--pico-primary);
-  font-size: 0.95rem;
-}
-.page-lessons .accordion-item.active .accordion-content {
-  max-height: 300px;
-}
-.page-lessons .accordion-item.active .accordion-header::after {
-  transform: rotate(180deg);
-}
-
 /* ===== Player / conteúdo (lições) ===== */
 .page-lessons .main-content {
   flex: 1;

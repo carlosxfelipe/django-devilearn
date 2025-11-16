@@ -20,16 +20,17 @@
         <input class="lesson-search" placeholder="Buscar por título de lección..." />
         <div class="accordion">
           {% for section in lesson.course_content %}
-          <div class="accordion-item">
-            <button class="accordion-header">Sección {{ section.id }}: {{ section.name }} 
-              <span>
+          <div class="accordion-item" style="margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 1px solid #ececec;">
+            <button class="accordion-header" style="display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; padding: 0 0 0.4rem 0; font-size: 1rem; font-weight: 500; cursor: pointer; text-align: left; margin-bottom: 0.4rem;">
+              <span style="flex: 1;">Sección {{ section.id }}: {{ section.name }}</span>
+              <span style="margin-right: 0.5em; min-width: 60px; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.97em;">
                 {{ section.complete_lessons|default:0 }} / {{ section.total_lessons|default:0 }}
               </span>
             </button>
             <div class="accordion-content">
-              <ul>
+              <ul style="margin-top: 0.7rem; margin-bottom: 0.7rem;">
                 {% for l in section.lessons %}
-                  <li>
+                  <li style="margin-bottom: 0.35em;">
                     {% if l.type == 'video' %}
                       <i class="fa-solid fa-video" style="color:#4f8cff;margin-right:0.5em;"></i>
                     {% elif l.type == 'article' %}
