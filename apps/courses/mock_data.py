@@ -68,7 +68,7 @@ course_details = [
                 "id": 1,
                 "name": "Introducción a Python",
                 "total_lessons": 2,
-                "complete_lessons": 0,
+                "complete_lessons": 2,
                 "lessons": [
                     {
                         "name": "¿Qué aprenderás en este curso de Python?",
@@ -84,7 +84,7 @@ course_details = [
                 "id": 2,
                 "name": "Fundamentos del lenguaje",
                 "total_lessons": 3,
-                "complete_lessons": 0,
+                "complete_lessons": 3,
                 "lessons": [
                     {"name": "Variables, tipos de datos y operadores", "type": "video"},
                     {"name": "Estructuras condicionales", "type": "video"},
@@ -95,7 +95,7 @@ course_details = [
                 "id": 3,
                 "name": "Colecciones y manejo de datos",
                 "total_lessons": 3,
-                "complete_lessons": 0,
+                "complete_lessons": 3,
                 "lessons": [
                     {"name": "Listas y tuplas", "type": "video"},
                     {"name": "Diccionarios y conjuntos", "type": "video"},
@@ -106,7 +106,7 @@ course_details = [
                 "id": 4,
                 "name": "Funciones y módulos",
                 "total_lessons": 3,
-                "complete_lessons": 0,
+                "complete_lessons": 2,
                 "lessons": [
                     {"name": "Creación y uso de funciones", "type": "video"},
                     {"name": "Argumentos, retorno y ámbito", "type": "article"},
@@ -140,7 +140,7 @@ course_details = [
                 "id": 1,
                 "name": "Introducción a Django",
                 "total_lessons": 2,
-                "complete_lessons": 0,
+                "complete_lessons": 1,
                 "lessons": [
                     {"name": "¿Qué es Django y para qué se usa?", "type": "video"},
                     {"name": "Arquitectura MVT", "type": "article"},
@@ -268,7 +268,7 @@ course_details = [
                 "id": 1,
                 "name": "Introducción a FastAPI",
                 "total_lessons": 2,
-                "complete_lessons": 0,
+                "complete_lessons": 2,
                 "lessons": [
                     {"name": "Core de FastAPI y ASGI", "type": "video"},
                     {"name": "Estructura profesional de proyecto", "type": "article"},
@@ -278,7 +278,7 @@ course_details = [
                 "id": 2,
                 "name": "APIs avanzadas",
                 "total_lessons": 2,
-                "complete_lessons": 0,
+                "complete_lessons": 2,
                 "lessons": [
                     {"name": "Validación avanzada con Pydantic", "type": "video"},
                     {"name": "Rutas, dependencias y seguridad", "type": "article"},
@@ -288,7 +288,7 @@ course_details = [
                 "id": 3,
                 "name": "Alto rendimiento",
                 "total_lessons": 2,
-                "complete_lessons": 0,
+                "complete_lessons": 1,
                 "lessons": [
                     {"name": "Concurrency con async/await", "type": "video"},
                     {"name": "Optimización y caché", "type": "article"},
@@ -322,11 +322,21 @@ course_details = [
 ]
 
 lessons_details = []
+
 for detail in course_details:
+    sections = detail["course_content"]
+
+    total = sum(s["total_lessons"] for s in sections)
+    completed = sum(s["complete_lessons"] for s in sections)
+
+    progress = int((completed / total) * 100) if total > 0 else 0
+
     lessons_details.append(
         {
             "course_title": detail["course_title"],
-            "course_progress": 0,
-            "course_content": detail["course_content"],
+            "course_progress": progress,
+            "course_content": sections,
         }
     )
+
+print(lessons_details)
